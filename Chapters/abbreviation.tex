@@ -1,0 +1,62 @@
+%\thispagestyle{plain}
+%\chaptermark{Abbreviation}
+\addcontentsline{toc}{chapter}{Abbreviations} \noindent
+%\renewcommand{\nomname}{List of Abbreviations}
+
+%--- Acronyms -----------------------------------------------------------------%
+% \acrodef{label}[acronym]{written out form} % acronym syntax
+%\acrodef{etacar}[$\eta$ Car]{Eta Carinae}   % acronym example
+%--- Acronyms -----------------------------------------------------------------%
+% how to use acronyms:
+% \ac = use acronym, first time write both, full name and acronym
+% \acf = use full name (text + acronym)
+% \acs = only use acronym
+% \acl = only use long text
+% \acp, acfp, acsp, aclp = use plural form for acronym (append 's')
+% \acsu, aclu = write + mark as used
+% \acfi = write full name in italics and acronym in normal style
+% \acused = mark acronym as used
+% \acfip = full, emphasized, plural, used
+%--- Acronyms -----------------------------------------------------------------%
+
+\chapter*{LIST OF ABBREVIATIONS}
+
+\newcommand{\abbrlabel}[1]{\makebox[7cm][l]{\textbf{#1}\ }}
+\newenvironment{abbreviations}{\begin{list}{}{\renewcommand{\makelabel}{\abbrlabel}}}{\end{list}}
+
+\begin{abbreviations}
+\item[$\alpha$] alpha
+\item[AEDs] antiepileptic drugs
+\item[$\beta$] beta
+\item[BOLD] Blood-oxygen-level-dependent 
+\item[CT] Computed Tomography
+\item[$\delta$] delta
+\item[EZ]   Epileptic zone
+\item[EEG] Electroencephalography
+\item[f] frequency
+\item[fMRI] Functional Magnetic Resonance Imaging
+\item[$\gamma$] gamma
+\item[GC] Granger causality
+\item[HFOs] High Frequency Oscillations
+\item[Hz] Hertz
+\item[IEEG] Intracranial Electroencephalography
+\item[iGC] Integrated Granger causality
+\item [ISA] Infraslow Activity
+\item [IsEEG] Infraslow EEG
+\item[MEG] Magnetoencephalography
+\item[MNI] Montreal Neurological Institute
+\item[mm] millimeter
+\item[MRI] Magnetic Resonance Imaging
+\item[ms] millisecond
+\item[P] Power
+\item[PET] Positron Emission Tomography
+\item[rsfMRI] Resting state fMRI   
+\item[s] Second
+\item[SPM] Statistical Parametric Mapping
+\item[SOZs] seizure onset
+\item[SOZs] seizure onset zones
+\item[SPECT] Single Photon Emission Computed Tomography
+\item[$\theta$] theta
+\item[t] time
+\end{abbreviations}
+

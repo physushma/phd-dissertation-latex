@@ -1,0 +1,43 @@
+%!TEX root = ../main.tex
+
+\chapter{Introduction}
+
+\section{Motivation}
+Epilepsy is one of the most common neurological diseases affecting over 2.5 million people in the United States and more than 50 million people worldwide. Epilepsy is characterized by recurrent and unprovoked epileptic seizures. The treatment of epilepsy involves the use of antiepileptic drugs (AEDs), as the first step. Medications generally work well in about 50\% of  patients. Approximately one-third of all seizure patients remain refractory to multiple pharmacological agents even with the development of new generations of anti-epileptic drugs \citep{franco2016challenges}. For these patients, the greatest opportunity for cure lies with surgical resection of the seizure focus. Despite progress in neuroimaging and electrophysiological techniques, the identification of clear resectable seizure focus is still a major bottleneck. Many of those who undergo intracranial EEG (iEEG) for a non-lesional focus never progress to surgical resection, and long-term remission occurs in only 40-60\% of those who undergo surgery. Responsive neural stimulation and selective laser ablation represent important recent innovations for treatment \citep{youngerman2018laser}. These techniques depend crucially on precise seizure onset zone localization.
+
+Epilepsy is now regarded more and more as a network disease. The organization of epileptic brain networks and their dynamics is key for understanding the onset and spread of epileptic seizures \citep{davis2021wheels}. Several imaging modalities such as IEEG, fMRI, PET, and CT scan are utilized to define brain anatomy, record neural activities, and collect important signals from different brain regions. Invasive recording (iEEG) is the gold standard for recording seizure activities in localized brain areas. However, spatial sampling is quite poor, as dozens of electrodes, with 10 contacts each, can only sample a small percentage of the cortex. As such, we can easily miss the ``true" seizure onset zone entirely, or remain uncertain, without additional clues from non-invasive methods like MRI and PET. 
+
+%Neurologists perform visual inspections on signals recorded from these modalities to detect anomalies in the brain functions.
+
+While neurologists perform visual inspection on iEEG signals to detect anomalies in the brain functions, different computational methods are being proposed as ancillary tools to quantify the neural activities and produce crucial biomarkers \citep{bartolomei2017defining, smith2021accuracy}. Previous studies, including from our lab, have shown that the high-frequency ($> 80$ Hz) neural information flow, as obtained by spectral Granger causality analysis on patients’ iEEG recordings, can be helpful to localize seizure origin. Recent qualitative studies have also shown that EEG system with an input filter of 0.1 Hz could record infraslow activity which can provide additional information \citep{rampp2012ictal}. Quantitative analysis on these infraslow activities is very limited and the concordance between the high and infraslow frequency activities with regards to seizure localization throughout epilepsy stages is not well understood. Likewise, the two different lines of evidence, based on iEEG recordings and fMRI, remain largely independent. The better understanding of the epilepsy network and application of that understanding to better network models for more successful treatment, depend critically on bringing them together.
+
+This research attempts to bridge this gap in knowledge on infraslow iEEG and its link to rsfMRI via quantitative techniques based on spectral Granger causality and graph theory. We first investigate the concordance between infraslow and high frequency iEEG activities throughout all phases of the epilepsy cycle. Secondly, we present a novel quantitative analysis technique to localize seizure focus by seeding the focus locations from iEEG to resting state fMRI that can potentially enable examining the seizure focus in unprecedented fine detail. 
+
+\section{Contributions}
+The main contributions from this thesis work are summarized below.
+
+\begin{itemize}
+%\item We validate that when recorded intracranially, the human EEG contains organized infraslow activity that can be explored through methods of frequency analysis.
+\item We demonstrate that infraslow activities can be quantified using spectral interdependency measures such as Granger causality and graph theory to localize the epileptic seizure focus within the human brain both immediately prior to the visible seizure onset (preictal) and remotely (interictally), many hours from any visible seizure. 
+
+\item We demonstrate that the intracranial ictal EEG can be seeded into corresponding voxels of the resting state functional MRI (rsfMRI) to characterize the epilepsy focus and its connections at millimeter resolution. 
+
+\item We establish the correlation of infraslow EEG activity, with the corresponding voxel of the resting state functional MRI (rsfMRI), and the seizure focus. 
+
+\end{itemize}
+
+
+\section{Dissertation organization}
+This document is organized as follows. Chapter \ref{chapter:overview} provides a background on epilepsy, clinical data modalities for epilepsy and state-of-art quantitative techniques on these data recordings related to our research and discuss the limitations. 
+Chapter \ref{chapter:ieeg-infraslow-hfo-correlation} presents the studies of functional connectivity correlation between infraslow and high frequency iEEG activities throughout all epilepsy stages. Seeding of the epilepsy network from iEEG to resting state fMRI for seizure onset localization is presented in Chapter \ref{chapter-seeding-iEEG-to-fmri}. Finally, the summary of our contributions and future outlook is discussed in Chapter \ref{chapter-summary}. 
+
+Chapter \ref{chapter:ieeg-infraslow-hfo-correlation} and Chapter \ref{chapter-seeding-iEEG-to-fmri}  of this dissertation are based on my following articles.
+
+\begin{itemize}
+
+\item %Ghimire S., Epstein C., and Dhamala M. 
+\textit{``A stable network spans from infraslow to ripples, from preictal to ictal, to interictal in iEEG recording in human epilepsy"}. Journal of Clinical Neurophysiology \textbf (Ready for submission)
+
+\item \textit{``Seeding of iEEG infraslow network into resting state fMRI"}. Journal of Clinical Neurophysiology \textbf (Ready for submission)
+
+\end{itemize}

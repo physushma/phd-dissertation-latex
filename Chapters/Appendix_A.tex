@@ -1,0 +1,65 @@
+\chapter{Definitions - Granger causality and graph measures}
+\label{chapter:appendix-definitions}
+
+\section{Granger causality}
+Given two simultaneously measured time series $X_{1}(t)$ and $X_{2}(t)$, we compute the covariance matrix ($\Sigma$), the transformation function ($H(f)$) by multivariate vector autoregressive modeling of the time series \citep{dhamala2008analyzing, dhamala2008estimating}, and the spectral density matrix ($S(f)$) from these time series, such that $S(f) = H(f) \sum H*(f)$. 
+
+The noise covariance matrix ($\Sigma$) is computed from the residual errors of the prediction models, and the transfer function $H$ is obtained from the matrix inverse of the Fourier transforms of the coefficients in the prediction models. For non-stationary process, $S, H,$ and $\Sigma$ can be estimated using the wavelet transforms-based non-parametric estimation \citep{dhamala2008estimating}, so that these quantities become the function of both time and frequency domains.
+
+The spectral GC from 2 to 1, $M_{2 \rightarrow 1}(f)$ can be obtained as
+
+\[ M_{2\rightarrow1}(f) = -\ln \frac{S_{11}(f) - (\sum_{22}- \frac{\sum^2_{12}}{\sum_{11}} ) | H_{12}(f) |^2 }{S_{11}(f)}\] 
+
+where, by interchanging 1 and 2, one can compute the spectral GC from 1 to 2, $M_{1 \rightarrow 2}(f)$.
+The time-domain Granger causality can be obtained by integration over the entire frequency range.
+The total interdependency measures of statistically inter-related two stationary
+processes consists of sub-measures and can be expressed as;
+\[ M_{1,2} = M_{1 \rightarrow 2} + M_{2 \rightarrow 1} + M_{1.2} \]
+where $M_{2 \rightarrow 1}$ and $M_{1 \rightarrow 2}$ are one-way directional delayed causal flow from 2 to 1 and 1 to 2, and
+$M_{1.2}$ is non-delayed instantaneous causal flow.
+
+\section{Graph measures}
+Consider a graph G with $N$ nodes, and the corresponding adjancey matrix $A$, where each element $a_{ij}$ represents a connection from node $i$ to node $j$, 1 if they are connected, and 0 otherwise. The mathematical definitions of some of the common graph measures are presented below.
+
+\begin{itemize}
+
+\item \textbf{Degree}: Node degree is the number of links connected to the node. In directed networks, the in-degree is the number of inward links and the out-degree is the number of outward links. The degree of node $i$ ($k_i$) can be defined as  
+\[k_i = \sum_{j \in N} a_i_j \] 
+
+\item \textbf{Clustering Coefficient}
+ The clustering coefficient is the fraction of triangles around a node and is equivalent to the fraction of node’s neighbors that are neighbors of each other.
+ 
+ Clustering coefficient of the network \citep{watts1998collective} ,
+ 
+ \[ C = \frac{1}{n} \sum_{i \in n} C_i = \frac{1}{n} \sum_{i \in n} \frac{2t_i}{k_i(k_i-1)} \;, \]
+ where $C_i$ is the clustering coefficient of node $i$ ($C_i = 0 \; for \;  K_i < 2$)
+
+%  The weighted clustering coefficient of the network (Onnela et al., 2005),
+ 
+%  \[ C^W = \frac{1}{n} \sum_{i \in N} \frac{2t_i^W}{k_i(k_i-1)} \]
+ 
+%   Directed clustering coefficient of the network (Fagiolo, 2007),
+ 
+%  \[ C^\rightarrow = \frac{1}{n} \sum_{i \in N} \frac{t_i^\rightarrow}{(k_i^{out} + k_i^{in})(k_i^{out} + k_i^{in}-1)-2\sum_{j \in N}a_i_j a_j_i} \]
+
+
+\item \textbf{Closeness centrality}: Closeness centrality is a distance function that can be used to determine the nodes that are central to other nodes \citep{freeman1978centrality}. Nodes with a high closeness score have the shortest distance to all other nodes.
+
+Closeness centrality of node i 
+\[ L_i^{-1} = \frac{n-1}{\sum_{j \in n, j \ne i}d_i_j}\]
+
+Weighted closeness centrality of node i,
+\[( L_i^w)^{-1} = \frac{n-1}{\sum_{j \in n, j \ne i}d_i_j^w}\]
+
+Directed closeness centrality of node i,
+\[( L_i^{\rightarrow})^{-1} = \frac{n-1}{\sum_{j \in n, j \ne i}d_i_j^{\rightarrow}}\]
+
+\item \textbf{Betweenness centrality}: Node betweenness centrality is the fraction of all shortest paths in the network that contain a given node. Nodes with high values of betweenness centrality participate in a large number of shortest paths. Betweenness centrality of node i can be defined as
+
+\[ b_i = \frac{1}{(n-1)(n-2)} \sum_{h,j \in N, h \ne j, h \ne i, j \ne i} \frac{\rho_i_j(i)}{\rho_i_j} \; ,  \]
+
+where  $\rho_i_j$ is the number of the shortest paths between $h$ and $j$, and $\rho_i_j(i)$ is the number of the shortest paths between $h$ and $j$ that pass through $i$
+
+Betweenness centrality is computed equivalently on weighted and directed networks, provided that path lengths are computed on respective weighted or directed paths.
+
+\end{itemize}
